@@ -1,8 +1,10 @@
 <template>
    <div class="conversor">
        <h2> {{moedaA}} para {{moedaB}}</h2>
-       <input type="text" v-model="moedaA_value" v-bind:placeholder="moedaA">
-       <input type="button" value="Converter" v-on:click="converter">
+       <div class="inputs">
+            <input type="text" v-model="moedaA_value" v-bind:placeholder="moedaA">
+            <input type="button" value="Converter" v-on:click="converter">
+       </div>
        <h2>{{moedaB_value}}</h2>
    </div>
 </template>
@@ -14,7 +16,7 @@ export default{
     data() {
         return{
             moedaA_value: "",
-            moedaB_value: 0,
+            moedaB_value: "-",
         }
     },
     methods: {
@@ -36,5 +38,14 @@ export default{
 </script>
 
 <style scoped>
+
+.conversor{
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px 0 darkgray;
+    background-color: rgb(236, 236, 236);
+}
+
+
 
 </style>
